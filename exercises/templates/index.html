@@ -6,8 +6,45 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-	<h1>my favorite food is blinches</h1>
-	<p>pargaraph: because I like it!</p>
+	{% if likes_same_sport == False%}
+		<div style="background-color:lightgreen ; color: blue; text-align:center;">
+			<h1>my favorite sport is soccer</h1>
+			<p>pargaraph: because I like it!</p>
+		</div>
+	{% else %}
+		<div style="background-color: lightgreen ; color: blue; text-align:center;">
+			<h1>my favorite sport is soccer</h1>
+			<p>pargaraph: because I like it!</p>		
+		</div>
+		<div style="background-color: blue; color: white ;">
+			<h2>the players</h2>	
+		</div>
+
+		<ul>
+			{% for player in players %}
+			<div style="background-color: black ; color: red;"> <li>{{player}}</li> </div>
+			{% endfor  %}
+		</ul>
+	{% endif %}
+	<img src="http://www.theaurora.ca/media/photologue/photos/cache/soccer-thinkstock-copy_large.jpg" width="400" height="240">
+	
+	<table border="1" >
+		<tr>
+			<th>la decima</th>
+			<th><img src="http://www.therealmadridfan.com/wp-content/uploads/ucl2014-rm.jpg"  width="200" height="120"></th>
+		</tr>
+		<tr>
+			<th>world cup</th>
+			<th><img src="https://dj0j0ofql4htg.cloudfront.net/cms2/image_manager/uploads/News/296514/7/1528795422_20561.jpg"   width="200" height="120"></th>
+
+		</tr>
+		<tr>
+			<th>el classico</th>
+			<th><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_n2gZ4Vkf60NVf6UIV8iKQQ_ykt-rIkGuLTtlOkDyzQIPBcO0" width="200" height="120"></th>
+
+		</tr>
+	</table>
+
 
 </body>
 </html>
